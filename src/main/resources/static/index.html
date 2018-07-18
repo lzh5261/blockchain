@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pb.css"/>
+    <style>
+
+        body {
+            margin: 30px;
+        }
+
+        #idInput {
+            width: 500px;
+        }
+
+        #result {
+            padding: 15px;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>
+<label>发送方私钥
+</label>
+<textarea class="form-control" id="senderPrivateKey">-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC68bWRqpC2CRY1hO8eTUlI7jfr
+uqFCtpQ3EJJ+kppYM38smVBD7iT/mxE4onRYdsK4DKxJnePhcbXju58yDv5H9dySiEg1s5xK4jef
+q5XBkZzALJhI3xiC6pH/YrwPlfOYU8hvYCVksd8VcoGOtQoST76VDecJVh9db0giDtCc8sr3S67Y
+4pPMfIyjzTUDStUVy+aHMBJM/wEWzhAdd1tGl1qgXz75jQ2QgxjcTUQLZVZkC5Du78bgNn/RfdSJ
+34f3dSdZZfSPy1Gs9BALRZHlilrZ0/DBSDs3wBeA3lUaZJCjm4RrzoJ9P+XWGFbIl5xitqrQEsZO
+qwrYBSMkJK+lAgMBAAECggEAbQuY8cMgbk6WmdlU8cP7P4NVMzfF4PhHNGeCTDqPtWs0f3teioFb
+K430WajJXODJbDpYNQjYaCTACHrkvXppcOhFJWRBWrHONRAHiie4TxT07lQU8EzSK2tQhju9nwnE
+8dHNVMoshbQLgKMuV2Pa4BuL+74ESjnmScYjuVoS7bjhV96a2VRQeawgekn9osGo4IhMTKNgZBZx
+uDjPUxUJVawfSm7w0J7KY/gmms9ZEdYbWH2TuGT/gpiV0kg3mFzU66Haaa0mok4IRllZAANp/YfC
+zZzc0KQVl4ny7XdN4BvyujfM2Rqc7sb00U1MZIG5SbflitwsqRdVr5tItZPscQKBgQDz9U4Ox6aW
+G0abxYZQVUd1MXVjSrMOGBqdquYx/lyMOYCw9rSXVNqry3N4FiIDh6mIXQNOPBMc35ZVUaBta4Om
+Bs6IjJN4j92J/RdSsuNS47m93xfQcSZMmSmyugs9A4IBVqjpvkdI1HJv+vMFD2OAu6XGZ33ABTy9
+pR1RwdCexwKBgQDEK/c7WZc213VACI53u8JrXmWWhDLIov45smQpJtEdrbfimBRjBNYzyQ/g72Fq
+WO8evrqayWlZIuKYF1tCvQpIJ6ASF80La0kGXXuCKhf66LsZ7hEoVsUFZAIWFNbSZPuPO4T5A619
+XeGNllfvRTrfflekBZEygMyEtTdRjWyCMwKBgBTNEb7I3zdlU/vsN6uZ2eHwOaYhtGq7O2m+LKqO
+ma2LKaHtJzDQF2UWj93pZTUP2DC8XY/KJ4cKuXLE5vztcegyJGIYOmrJOYaOgfKXNjLXH/tEjm9D
+dpSJarjGjDbDmc4raXOkucdH9gn+R8JisYVEeroUEPDSgX9aGMnj0Ln5AoGBAJ3QzOVnLrpE3SO1
+fn+egksENu++zGgSkDj0ZZWhj6uznHJjbEs4keY5Q1fu3EzE3SG7yL1LeT/nS6mVaKqpEAN6NVE4
+6pDcL3Q6cmkF2iLVZef3WMA+BeRPT0paW3QJH0NcW55EsiZgB1tzbqyj4jf4GSNwAx5A9cdxTd6C
+yp93AoGAKiEWE6eip9haN7scx51PiFoubn6+MqnFrwMCZ6HO7hfDPudWjdiT+YoCW2z2V8QXQb55
+LgbtNcntnSQ1sPOq6k4j1gm0q8cTv8vMlhyRzaJkZGjxURqaDnNUq60FX8vol0uF/AXjRudOoJpN
+66J0hDzIh3mg8bDCJSlSQBDFF7A=
+-----END PRIVATE KEY-----</textarea>
+<label>发送方公钥
+</label>
+<textarea class="form-control" id="senderPublicKey">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuvG1kaqQtgkWNYTvHk1JSO4367qhQraU
+NxCSfpKaWDN/LJlQQ+4k/5sROKJ0WHbCuAysSZ3j4XG147ufMg7+R/XckohINbOcSuI3n6uVwZGc
+wCyYSN8YguqR/2K8D5XzmFPIb2AlZLHfFXKBjrUKEk++lQ3nCVYfXW9IIg7QnPLK90uu2OKTzHyM
+o801A0rVFcvmhzASTP8BFs4QHXdbRpdaoF8++Y0NkIMY3E1EC2VWZAuQ7u/G4DZ/0X3Uid+H93Un
+WWX0j8tRrPQQC0WR5Ypa2dPwwUg7N8AXgN5VGmSQo5uEa86CfT/l1hhWyJecYraq0BLGTqsK2AUj
+JCSvpQIDAQAB</textarea>
+<label>接收方公钥
+</label>
+<textarea class="form-control" id="receiverPublicKey">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArOqt9TB63E5bgaHlnLoN34EiYzXYViSN
+BnFR45i2rLeMjDJHSAfu2I9zdV++zzdr7UpDmk+zvc34TrVowYqno6njD0Cb2M/s3abrPntaA/V3
+eXyuKFO6UcUE6vH1ZkhNZxKIn2TUEDOoS0I523pzm2kpu7CFzItcfzWmiJuDu0Bj6J4QJsoCRZr2
+7eIuZ5/NJTdKzbkeWeI/tpbMl1QdW+vi9NW5rCHCGn+aQJaIa2PHIESaKplIzW1VAw6riDDp+GzK
+7lsUafbXWMvcQsP8C6YWXGrLmy3YpEf9tD1qF8kN5xsaAHQ2Qzan2E4cezzEpWbpBHO4+LWZnmWh
+fEiTrwIDAQAB</textarea>
+<label>转账信息
+</label>
+<!--输入框-->
+<input type="text" class="form-control" id="idInput" placeholder="请输入内容"> <br>
+<!--按钮组-->
+<div class="btn-group btn-group-lg">
+    <button type="button" class="btn btn-default" onclick="addGenesis()">添加封面</button>
+    <button type="button" class="btn btn-default" onclick="addNote()">添加记录</button>
+    <button type="button" class="btn btn-default" onclick="check()">校验数据</button>
+</div>
+<!--输入框-->
+<input type="text" class="form-control" id="idNode" placeholder="请输入节点">
+<!--按钮组-->
+<div class="btn-group btn-group-lg">
+    <button type="button" class="btn btn-default" onclick="regist()">注册节点</button>
+    <button type="button" class="btn btn-default" onclick="conn()">连接节点</button>
+    <button type="button" class="btn btn-default" onclick="broadcast()">广播</button>
+    <button type="button" class="btn btn-default" onclick="syncData()">同步</button>
+</div>
+<br>
+<!--用于展示结果-->
+<p class="bg-info" id="result"></p><br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th>Nonce</th>
+        <th>PreHash</th>
+        <th>Hash</th>
+    </tr>
+    </thead>
+    <tbody id="tbodyId">
+
+    </tbody>
+</table>
+<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/pb.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jsrsasign-all-min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    // 打开页面后,直接展示数据
+    // 添加以后,展示最新数据
+    // 添加以后,清空输入框
+    // 耗时操作,添加进度条
+    function addGenesis() {
+        //用户输入的内容
+        var content = $("#idInput").val();
+        // 显示进度条
+        loading.baosight.showPageLoadingMsg(false);
+        //发起请求
+        $.post("addGenesis", "genesis=" + content, function (data) {
+            // 展示操作结果
+            $("#result").html(data);
+            // 查询最新的数据
+            showlist();
+            //清空输入框
+            $("#idInput").val("");
+            // 隐藏进度条
+            loading.baosight.hidePageLoadingMsg()
+        })
+    }
+
+    function addNote() {
+
+        // 发送方私钥
+        var senderPrivateKey = $("#senderPrivateKey").val();
+        // 发送方公钥
+        var senderPublicKey = $("#senderPublicKey").val();
+        // 接收方公钥
+        var receiverPublicKey = $("#receiverPublicKey").val();
+        // 转账信息
+        var content = $("#idInput").val();
+
+        /*=================================使用js库生成签名信息=====开始======================================*/
+        // 获取私钥
+        var prvKey = KEYUTIL.getKey(senderPrivateKey);
+        // 指定算法
+        var sig = new KJUR.crypto.Signature({"alg": "SHA256withRSA"});
+        // 初始化私钥
+        sig.init(prvKey);
+        // 传入原文
+        sig.updateString(content);
+        // 生成签名
+        var sigValueHex = sig.sign();
+        console.log(sigValueHex);
+        /*=================================使用js库生成签名信息=====结束======================================*/
+
+        loading.baosight.showPageLoadingMsg(false); // 显示进度条
+        // 发起请求
+        $.post("addNote", {
+            publicKeyFrom: senderPublicKey,
+            publicKeyTo: receiverPublicKey,
+            money: content,
+            sign: sigValueHex
+        }, function (data) {
+            // 展示操作结果
+            $("#result").html(data);
+            // 展示最新数据
+            showlist();
+            // 清空输入框
+            $("#idInput").val("");
+            loading.baosight.hidePageLoadingMsg() // 隐藏进度条
+        });
+    }
+
+        function addNote2() {
+            // 获取用户输入的内容
+            var content = $("#idInput").val();
+            // 显示进度条
+            loading.baosight.showPageLoadingMsg(false);
+            $.post("addNote", "note=" + content, function (data) {
+                //展示操作结果
+                $("#result").html(data);
+                //显示最新数据
+                showlist();
+                //清空输入框
+                $("#idInput").val("");
+                loading.baosight.hidePageLoadingMsg()
+            })
+        }
+
+        function showlist() {
+            loading.baosight.showPageLoadingMsg(false);
+            $.get("showlist", function (data) {
+                $("#tbodyId").html("");
+                for (var i = 0; i < data.length; i++) {
+                    var id = data[i].id;
+                    var content = data[i].content;
+                    var psw = data[i].nonce;
+                    var preHash = data[i].preHash;
+                    var hash = data[i].hash;
+                    $("#tbodyId").append("<tr><td>" + id + "</td><td>" + content + "</td><td>" + psw + "</td><td>" + preHash + "</td><td>" + hash + "</td></tr>")
+                }
+                loading.baosight.hidePageLoadingMsg()
+            })
+        }
+
+        //校验数据显示结果到页面上
+        function check() {
+            loading.baosight.showPageLoadingMsg(false);
+            $.get("check", function (data) {
+                $("#result").html(data);
+                loading.baosight.hidePageLoadingMsg()
+            })
+        }
+
+        /*=================================节点间的注册与同步======================================*/
+        function regist() {
+            // 获取用户输入的内容
+            var content = $("#idNode").val();
+            loading.baosight.showPageLoadingMsg(false); // 显示进度条
+            // 发起请求
+            $.post("regist", "node=" + content, function (data) {
+                // 展示操作结果
+                $("#result").html(data);
+                // 清空输入框
+                $("#idNode").val("");
+                loading.baosight.hidePageLoadingMsg() // 隐藏进度条
+            })
+        }
+
+        function conn() {
+
+            loading.baosight.showPageLoadingMsg(false); // 显示进度条
+            // 发起请求
+            $.post("conn", function (data) {
+                // 展示操作结果
+                $("#result").html(data);
+
+                loading.baosight.hidePageLoadingMsg() // 隐藏进度条
+            })
+        }
+
+        function broadcast() {
+            // 获取用户输入的内容
+            var content = $("#idNode").val();
+            loading.baosight.showPageLoadingMsg(false); // 显示进度条
+            // 发起请求
+            $.post("broadcast", "msg=" + content, function (data) {
+                // 展示操作结果
+                $("#result").html(data);
+                // 清空输入框
+                $("#idNode").val("");
+                loading.baosight.hidePageLoadingMsg() // 隐藏进度条
+            })
+        }
+
+        function syncData() {
+            loading.baosight.showPageLoadingMsg(false);// 显示进度条
+            // 发起请求
+            $.post("syncData", function (data) {
+                // 展示操作结果
+                $("#result").html(data);
+
+                loading.baosight.hidePageLoadingMsg() // 隐藏进度条
+            })
+        }
+
+        // 页面加载成功后,查询已有数据
+        $(function () {
+            showlist();
+        })
+</script>
+</body>
+</html>
